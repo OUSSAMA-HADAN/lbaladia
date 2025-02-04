@@ -25,7 +25,7 @@
                     <div class="mb-4">
                         <label for="email" class="block text-gray-700">CIN</label>
                         <input type="email" name="email" id="email" class="w-full p-2 border border-gray-300 rounded mt-1" required>
-                    </div>
+                    </div> 
                     <div class="mb-6">
                         <label for="password" class="block text-gray-700">NUMERO DE MATRICULATION</label>
                         <input type="password" name="password" id="password" class="w-full p-2 border border-gray-300 rounded mt-1" required>
