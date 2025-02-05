@@ -30,7 +30,7 @@
     </div>
     <div class="mt-5" style="max-height: 50vh; overflow-y: auto;">
         <table class="table table-bordered border-dark">
-            <thead class="sticky-header">
+            <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
                 <tr>
                     <th class="col-3">Destination</th>
                     <th>Sujet</th>
@@ -38,15 +38,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="row-color-1">
-                    <td>Row 1, Cell 1</td>
-                    <td>Row 1, Cell 2</td>
-                    <td>Row 1, Cell 2</td>
+                <tr >
+                    <td  style="background-color: #ffc271;">Row 1, Cell 1</td>
+                    <td  style="background-color: #ffc271;">Row 1, Cell 2</td>
+                    <td  style="background-color: #ffc271;">Row 1, Cell 2</td>
                 </tr>
-                <tr class="row-color-2">
-                    <td>Row 2, Cell 1</td>
-                    <td>Row 2, Cell 2</td>
-                    <td>Row 2, Cell 2</td>
+                <tr >
+                    <td style="background-color: #8c8282;">Row 2, Cell 1</td>
+                    <td style="background-color: #8c8282;">Row 2, Cell 2</td>
+                    <td style="background-color: #8c8282;">Row 2, Cell 2</td>
                 </tr>
             </tbody>
         </table>
