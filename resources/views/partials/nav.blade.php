@@ -22,7 +22,7 @@
 </style>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark text-light">
+<nav class="navbar navbar-expand-lg navbar-light  text-light " style="background-color: #d9d9d9 !important;">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" class="d-inline-block align-text-top">
@@ -31,13 +31,11 @@
         <div class="mx-auto page-title">Accueil</div>
 
         <div class="d-flex align-items-center">
-            <div
+            <div>
             <span class="">User Name</span><br>
             <span class="">000000000000</span></div>
-            <img src="{{ asset('storage/images/logo.png') }}" alt="User" class="rounded-circle me-2">
+            <img src="{{ asset('storage/images/profil.png') }}" alt="User" class="rounded-circle me-2" height="50px" width="50px">
+            </div>
         </div>
     </div>
 </nav>
-{{-- 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> --}}
