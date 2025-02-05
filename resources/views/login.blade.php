@@ -4,43 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
+    <title>Authentification</title>
+    <!-- Bootstrap CSS -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <!-- Custom Styles -->
+    <style>
+        .bg-cover {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="overflow-hidden">
-    <div class="absolute top-0 left-0 m-4 z-20"> <!-- Added z-20 -->
-        <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" class="h-20 drop-shadow-lg"> 
+    <!-- Logo -->
+    <div class="position-absolute top-0 start-0 m-4 z-3">
+        <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" class="img-fluid" style="height: 80px; filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));">
     </div>
-    
-    <div class="container h-screen bg-cover bg-center relative" style="background-image: url('{{ asset('storage/images/oujda_bg.png') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10">
-            <h1 class="text-center text-white font-bold text-5xl pt-10 mb-0">AUTHENTIFICATION</h1>
-        </div>
-        <div class="flex justify-center items-center h-screen">
-            <div class="bg-gray-300 p-8 rounded-lg shadow-lg w-full max-w-md relative z-20">
-                <h2 class="text-2xl font-bold mb-6 text-center">SE CONNECT</h2>
-                <form action="" method="POST">
-                    @csrf
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700">CIN</label>
-                        <input type="email" name="email" id="email" class="w-full p-2 border border-gray-300 rounded mt-1" required>
-                    </div> 
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700">NUMERO DE MATRICULATION</label>
-                        <input type="password" name="password" id="password" class="w-full p-2 border border-gray-300 rounded mt-1" required>
-                    </div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <input type="checkbox" name="remember" id="remember" class="mr-1">
-                            <label for="remember" class="text-gray-700">Remember Me</label>
+
+    <!-- Background Image with Overlay -->
+    <div class="container-fluid vh-100 bg-cover position-relative" style="background-image: url('{{ asset('storage/images/oujda_bg.png') }}');">
+        <!-- Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
+
+        <!-- Content -->
+        <div class="position-relative z-2">
+            <!-- Title -->
+            <h1 class="text-center text-white fw-bold display-4 pt-5 mb-0">AUTHENTIFICATION</h1>
+
+            <!-- Login Form -->
+            <div class="d-flex justify-content-center align-items-center vh-95 mt-5">
+                <div class="bg-light p-4 rounded shadow w-100" style="max-width: 400px;">
+                    <h2 class="text-center fw-bold mb-4">SE CONNECT</h2>
+                    <form action="" method="POST">
+                        @csrf
+                        <!-- CIN Input -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">CIN</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
                         </div>
-                       
-                    </div>
-                    <button type="" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
-                </form>
+                        <!-- Matriculation Number Input -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">NUMERO DE MATRICULATION</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <!-- Remember Me Checkbox -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                            <label for="remember" class="form-check-label">Remember Me</label>
+                        </div>
+                        <!-- Login Button -->
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS (with Popper.js) -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> --}}
 </body>
 </html>

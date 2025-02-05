@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ADMIN</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     {{-- @vite('resources/css/app.css') --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div class="container mt-5">
@@ -27,9 +28,9 @@
             </div>
         </div>
     </div>
-    <div class="fixed-bottom mt-5" style="max-height: 50vh; overflow-y: auto;">
+    <div class="mt-5" style="max-height: 50vh; overflow-y: auto;">
         <table class="table table-bordered border-dark">
-            <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+            <thead class="sticky-header">
                 <tr>
                     <th class="col-3">Destination</th>
                     <th>Sujet</th>
@@ -37,12 +38,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr style="background-color: #ffc271;">
+                <tr class="row-color-1">
                     <td>Row 1, Cell 1</td>
                     <td>Row 1, Cell 2</td>
                     <td>Row 1, Cell 2</td>
                 </tr>
-                <tr style="background-color: #8c8282;">
+                <tr class="row-color-2">
                     <td>Row 2, Cell 1</td>
                     <td>Row 2, Cell 2</td>
                     <td>Row 2, Cell 2</td>
@@ -51,7 +52,7 @@
         </table>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> --}}
 </body>
 </html>
 
