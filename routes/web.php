@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\TableController;
-use App\Http\Middleware\IsOussamaUser;
+use App\Http\Controllers\AcceilController;
+use App\Http\Controllers\LoginCOntroller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', function () {return view('login');});
+
+Route::get("/login",[LoginCOntroller::class,'index']);
+Route::get("/Admin/acceil",[AcceilController::class,'accueil']);
