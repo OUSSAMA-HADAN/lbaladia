@@ -27,7 +27,7 @@
                     <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Gestion Foncionnaire</a><br>
                 </div>
                 <div class="mt-auto p-3">
-                    <button class="btn btn-danger button2">Logout</button>
+                    <a class="btn btn-danger button2" href="{{ route('login.logout') }}">Logout</a>
                 </div>
             </div>
         </div>

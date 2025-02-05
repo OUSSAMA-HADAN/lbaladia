@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\OrdreMission;
 use App\Models\Fonctionnaire;
+use App\Models\Utilisateur;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrdreMissionFactory extends Factory
@@ -17,7 +18,7 @@ class OrdreMissionFactory extends Factory
             'dateFin' => $this->faker->date(),
             'destination' => $this->faker->city,
             'objectif' => $this->faker->sentence,
-            'idFonctionnaire' => Fonctionnaire::factory(),  // Create a Fonctionnaire via its factory
+            'idUtilisateur' => Utilisateur::factory(),  // Create a Fonctionnaire via its factory
             'etatRemboursement' => $this->faker->randomElement(['Pending', 'Approved', 'Rejected']),
         ];
     }
