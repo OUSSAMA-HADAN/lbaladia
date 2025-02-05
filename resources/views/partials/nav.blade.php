@@ -1,6 +1,3 @@
-
-<!-- Bootstrap CSS -->
-{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <style>
     .navbar {
@@ -16,9 +13,7 @@
         font-size: 18px;
         font-weight: 500;
     }
-    span{
-        color: white;
-    }
+    
 </style>
 <body>
 

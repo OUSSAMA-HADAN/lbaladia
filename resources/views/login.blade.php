@@ -7,7 +7,6 @@
     <title>Authentification</title>
     <!-- Bootstrap CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <!-- Custom Styles -->
     <style>
         .bg-cover {
@@ -61,7 +60,5 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS (with Popper.js) -->
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> --}}
 </body>
 </html>
