@@ -24,7 +24,7 @@ class UtilisateurFactory extends Factory
             'num_de_matriculation' => $this->faker->unique()->numerify('######'),
             'cin' => $this->faker->unique()->numerify('######'),
             'role' => $this->faker->word,
-            'password' => 'password123',
+            'password' => bcrypt('password123'),
         ];
     }
 }

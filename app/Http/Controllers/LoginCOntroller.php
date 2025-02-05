@@ -22,13 +22,12 @@ class LoginCOntroller extends Controller
             'password' => $password,
         ];
 
-        // if (Auth::attempt($credentials)) {
-            $utilisateur = Auth::id();
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return to_route('admin.accueil');
-        // } else {
+        } else {
             return back()->withErrors(['login' => 'CIN or NUM de Matriculation or Password is incorrect, try again!']);
-        // }
+        }
     }
 
     public function logout(Request $request)

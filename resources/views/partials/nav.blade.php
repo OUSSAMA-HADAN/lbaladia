@@ -27,8 +27,8 @@
 
         <div class="d-flex align-items-center">
             <div>
-            <span class=" text-primary ">User Name</span><br>
-            <span class=" text-primary border-top border-dark">000000000000</span></div>
+            <span class=" text-primary ">{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</span><br>
+            <span class=" text-primary border-top border-dark">{{ Auth::user()->num_de_matriculation }}</span></div>
             <img src="{{ asset('storage/images/profil.png') }}" alt="User" class="rounded-circle me-2" height="50px" width="50px">
             </div>
         </div>

@@ -41,12 +41,12 @@
                             <!-- CIN Input -->
                             <div class="mb-3">
                                 <label for="cin" class="form-label">CIN</label>
-                                <input value="F123456" type="text" name="cin" id="cin" class="form-control">
+                                <input value="665766" type="text" name="cin" id="cin" class="form-control">
                             </div>
                             <!-- Matriculation Number Input -->
                             <div class="mb-3">
                                 <label for="password" class="form-label">NUMERO DE MATRICULATION</label>
-                                <input value="ousama1234" type="password" name="password" id="password" class="form-control">
+                                <input value="password123" type="password" name="password" id="password" class="form-control">
                             </div>
                             <!-- Remember Me Checkbox -->
                             <div class="mb-3 form-check">
