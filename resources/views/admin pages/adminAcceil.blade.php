@@ -21,7 +21,7 @@
                 </button>
             </div>
             <div class="col-md-4 text-end">
-                <button class="btn btn-success">Nouveau Ordre de Mission</button>
+                <a class="btn btn-success" href="{{route("admin.ordre")}}">Nouveau Ordre de Mission</a>
             </div>
             </div>
         </div>
