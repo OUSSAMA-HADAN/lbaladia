@@ -19,12 +19,12 @@ class CreateOrdreMissionTable extends Migration
             $table->date('dateFin');
             $table->string('destination');
             $table->string('objectif');
-            $table->unsignedBigInteger('idFonctionnaire');
+            $table->unsignedBigInteger('idUtilisateur');
             $table->string('etatRemboursement');
             $table->timestamps();
 
             // Adding a foreign key constraint for the idFonctionnaire column
-            $table->foreign('idFonctionnaire')->references('id')->on('fonctionnaire')->onDelete('cascade');
+            $table->foreign('idUtilisateur')->references('id')->on('utilisateur')->onDelete('cascade');
         });
     }
 

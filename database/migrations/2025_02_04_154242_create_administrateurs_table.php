@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 class CreateAdministrateursTable extends Migration
 {
@@ -13,8 +14,8 @@ class CreateAdministrateursTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrateurs', function (Blueprint $table) {
-            $table->id();
+        Schema::create('utilisateur', function (Blueprint $table) {
+            $table->id()->Unique();
             $table->string('nom');
             $table->string('prenom');
             $table->string('num_de_matriculation');
