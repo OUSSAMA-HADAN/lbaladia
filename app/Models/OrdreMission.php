@@ -16,13 +16,13 @@ class OrdreMission extends Model
         'dateFin',
         'destination',
         'objectif',
-        'idFonctionnaire',
+        'idUtilisateur',
         'etatRemboursement',
     ];
 
     // Define the relationship to Fonctionnaire
-    public function fonctionnaire()
+    public function utilisateur()
     {
-        return $this->belongsTo(Fonctionnaire::class, 'idFonctionnaire');
+        return $this->belongsTo(Utilisateur::class, 'idUtilisateur');
     }
 }

@@ -26,8 +26,7 @@
             </div>
         </div>
     </div>
-    <x-table/>
-
+    <x-tableCard :orders="$orders" />
 
 </body>
 </html>
