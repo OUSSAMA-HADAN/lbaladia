@@ -52,9 +52,10 @@
                             <td style="background-color: #ffc271;">{{ $order->etatRemboursement }}</td>
                             <td style="background-color: #ffc271;">de:{{ $order->dateDebut }} <br> a:{{ $order->dateFin }}
                             </td>
-                            <form action="">
+                            <form action="{{ route('admin.rapportEdit' , $order->id) }}" method="get">
+                                @csrf
                                 <td style="background-color: #ffc271;"><a
-                                        href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-success">Edit</a>
+                                    href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-success">Edit</a>
                                 </td>
                             </form>
 

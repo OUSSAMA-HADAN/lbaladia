@@ -15,8 +15,5 @@ class AcceilController extends Controller
     public function rapport(){
         return view('admin pages.adminRapport');
     }
-    public function rapportEdit($id){
-        dd($id);
-        return view('admin pages.rapportEdit');
-    }
+    
 }
