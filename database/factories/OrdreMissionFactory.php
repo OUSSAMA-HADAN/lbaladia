@@ -15,10 +15,11 @@ class OrdreMissionFactory extends Factory
     {
         return [
             'dateDebut' => $this->faker->date(),
+            'dateArrive' => $this->faker->date(),
             'dateFin' => $this->faker->date(),
             'destination' => $this->faker->city,
             'objectif' => $this->faker->sentence,
-            'idUtilisateur' => Utilisateur::factory(),  // Create a Fonctionnaire via its factory
+            'idUtilisateur' => Utilisateur::factory(),
             'etatRemboursement' => $this->faker->randomElement(['Pending', 'Approved', 'Rejected']),
         ];
     }
