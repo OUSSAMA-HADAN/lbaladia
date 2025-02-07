@@ -7,7 +7,7 @@
     <title>Printable A4 Template</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+   
 </head>
 
 <body>
@@ -23,100 +23,75 @@
             <h1>أمر بمهمة</h1>
         </div>
         <div class="content">
-            <form action="{{ route('ordres.store') }}" method="POST" class="text-right">
+            <form action="" method="POST" class="text-right">
                 @csrf
-                <table class="">
-                    <thead>
-                        <tr>
-                            <td>
-                                <label for="name">يتعين على السيد:</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control col-4" id="name" name="name" required>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label for="grade">الدرجة:</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control col-4" id="grade" name="grade" required>
-                            </td>
-                            
-                        
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="id_number">رقم بطاقة التعريف الوطنية:</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control col-4" id="id_number" name="id_number" required>
-                            </td>
-                
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="city">مدينة:</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control col-4" id="city" name="city" required>
-                            </td>
-                
-                        </tr>
-                        <tr>
-                            <td>
-                    <label for="transport">وسيلة النقل:</label>
-                            </td>
-                            <td></td>
-                
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                
-                        </tr>
-                    </tbody>
-                </table>
-
-
-
-                <div class="form-group d-flex">
-
+                <div class="container mt-5">
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Formulaire Professionnel</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nom" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" id="nom" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="prenom" class="form-label">Prénom</label>
+                                        <input type="text" class="form-control" id="prenom" required>
+                                    </div>
+                                </div>
+            
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="dateDebut" class="form-label">Date Début</label>
+                                        <input type="date" class="form-control" id="dateDebut" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="dateArrivee" class="form-label">Date Arrivée</label>
+                                        <input type="date" class="form-control" id="dateArrivee" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="dateFin" class="form-label">Date Fin</label>
+                                        <input type="date" class="form-control" id="dateFin" required>
+                                    </div>
+                                </div>
+            
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="transport" class="form-label">Transport</label>
+                                        <select class="form-select" id="transport" required>
+                                            <option value="">Choisissez un moyen de transport</option>
+                                            <option value="Voiture">Voiture</option>
+                                            <option value="Train">Train</option>
+                                            <option value="Avion">Avion</option>
+                                            <option value="Autre">Autre</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="destination" class="form-label">Destination</label>
+                                        <input type="text" class="form-control" id="destination" required>
+                                    </div>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="sujet" class="form-label">Sujet</label>
+                                    <textarea class="form-control" id="sujet" rows="3" required></textarea>
+                                </div>
+            
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
-
-                <div class="form-group d-flex">
-                </div>
-                <div class="form-group d-flex">
-                </div>
-                <div class="form-group d-flex">
-                </div>
-
-                <div class="form-group d-flex">
-                    <input type="text" class="form-control col-6" id="transport" name="transport" required>
-                </div>
-                <div class="form-group d-flex">
-                    <label for="purpose">من أجل:</label>
-                    <textarea class="form-control" id="purpose" name="purpose" rows="10" required></textarea>
-
-                </div>
-                
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button class="btn btn-secondary mt-3" onclick="printPage()">Print</button>
-                
 
             </form>
-        </div>
+        
 
-    </div>
+    
 
-    <script>
-        function printPage() {
-            window.print();
-        }
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
