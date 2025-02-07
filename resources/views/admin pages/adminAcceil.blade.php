@@ -30,22 +30,25 @@
         <table class="table table-bordered border-dark">
             <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
                 <tr>
-                    <th class="col-3">Destination</th>
+                    <th class="col-3">Nom foncionnaire</th>
+                    <th class="col-2">destination</th>
                     <th>Sujet</th>
-                    <th class="col-3">Date</th>
+                    <th class="col-2">Date</th>
                 </tr>
             </thead>
             <tbody>
-                <tr >
+                <a href="#"><tr >
                     <td  style="background-color: #ffc271;">Row 1, Cell 1</td>
                     <td  style="background-color: #ffc271;">Row 1, Cell 2</td>
                     <td  style="background-color: #ffc271;">Row 1, Cell 2</td>
-                </tr>
-                <tr >
+                    <td  style="background-color: #ffc271;">de:....... <br> a:..............</td>
+                </tr></a>
+                <a href="#"><tr >
                     <td style="background-color: #8c8282;">Row 2, Cell 1</td>
                     <td style="background-color: #8c8282;">Row 2, Cell 2</td>
                     <td style="background-color: #8c8282;">Row 2, Cell 2</td>
-                </tr>
+                    <td style="background-color: #8c8282;">de:....... <br> a:..............</td>
+                </tr></a>
             </tbody>
         </table>
     </div>

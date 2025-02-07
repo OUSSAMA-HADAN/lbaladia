@@ -41,7 +41,7 @@
                             <!-- CIN Input -->
                             <div class="mb-3">
                                 <label for="cin" class="form-label">CIN</label>
-                                <input value="665766" type="text" name="cin" id="cin" class="form-control">
+                                <input value="679895" type="text" name="cin" id="cin" class="form-control">
                             </div>
                             <!-- Matriculation Number Input -->
                             <div class="mb-3">

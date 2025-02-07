@@ -22,7 +22,7 @@
                 <div class="list-group flex-grow-1 mt-auto p-3 button1 text-center"><br>
                     <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Accueil</a><br>
                     <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Raports</a><br>
-                    <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Statistics</a><br>
+                    {{-- <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Statistics</a><br> --}}
                     <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Archive</a><br>
                     <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Gestion Foncionnaire</a><br>
                 </div>
