@@ -25,10 +25,10 @@ class orderController extends Controller
     }
 
 
-    public function rapportEdit($id)
+    public function ordreEdit($id)
     {
         $order = OrdreMission::findOrFail($id);
-        return view('admin pages.rapportEdit' , compact('order'));
+        return view('admin pages.ordre.ordreEdit' , compact('order'));
     }
 
 
