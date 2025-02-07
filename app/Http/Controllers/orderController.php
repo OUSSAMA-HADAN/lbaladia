@@ -9,8 +9,8 @@ class orderController extends Controller
 {
     public function accueil(){
         $orders = OrdreMission::all();
-        dd($orders);
-        return view('admin pages\adminAcceil' , compact('orders'));
+        // dd($orders);
+        return view('admin pages\ajouterOrdre' , compact('orders'));
     }
 
 
