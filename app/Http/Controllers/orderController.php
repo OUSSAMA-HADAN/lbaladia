@@ -39,6 +39,7 @@ class OrderController extends Controller
             'dateDebut' => 'nullable|date|before_or_equal:dateFin',
             'dateArrive' => 'nullable|date|after_or_equal:dateDebut',
             'dateFin' => 'nullable|date|after_or_equal:dateDebut',
+            'transport' => 'nullable|string|max:255',
             'destination' => 'nullable|string|max:255',
             'objectif' => 'nullable|string|max:500',
             'etatRemboursement' => 'nullable|boolean',
@@ -47,5 +48,18 @@ class OrderController extends Controller
         $ordre->update($formFields);
 
         return to_route('admin.accueil');
+    }
+
+    public function destroy($id)
+    {
+        $ordre = OrdreMission::findOrFail($id);
+
+        try {
+            $ordre = OrdreMission::findOrFail($id);
+            $ordre->delete();
+            return to_route('admin.accueil');
+        } catch (\Exception $e) {
+            return to_route('admin.accueil');
+        }
     }
 }

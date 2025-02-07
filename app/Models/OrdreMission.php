@@ -22,6 +22,7 @@ class OrdreMission extends Model
         'etatRemboursement',
     ];
 
+
     // Define the relationship to Fonctionnaire
     public function utilisateur()
     {

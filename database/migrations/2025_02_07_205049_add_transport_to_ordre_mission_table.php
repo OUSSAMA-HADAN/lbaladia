@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ordre_mission', function (Blueprint $table) {
-            $table->date('transport')->nullable()->after('dateFin');
+            $table->string('transport')->nullable()->after('dateFin');
         });
     }
 
