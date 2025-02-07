@@ -2,60 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderMissionRequest;
 use App\Models\OrdreMission;
-use App\Models\RapportDeMission;
 use Illuminate\Http\Request;
 
-class orderController extends Controller
+class OrderController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $orders = OrdreMission::all();
-
-        return view('admin pages.adminAcceil' , compact('orders'));
+        return view('admin pages.adminAcceil', compact('orders'));
     }
-
 
     public function create()
     {
         return view('admin pages.ordre.ajouterOrdre');
     }
 
-    public function store(Request $request){
-        $formFields = $request->validated();
-
-        OrdreMission::create($formFields);
-
-        return to_route('admin pages\adminAcceil');
+    public function store(OrderMissionRequest $request)
+    {
+        OrdreMission::create($request->validated());
+        return to_route('admin.accueil');
     }
-
 
     public function edit($id)
     {
         $order = OrdreMission::findOrFail($id);
-        return view('admin pages.ordre.ordreEdit' , compact('order'));
+        return view('admin pages.ordre.ordreEdit', compact('order'));
     }
 
+    public function update(Request $request, $id)
+    {
+        $ordre = OrdreMission::findOrFail($id);
 
-    // public function store(EmployeeRequest $request)
-    // {
-    //     $this->authorize('create', Employee::class);
+        $formFields = $request->validate([
+            'dateDebut' => 'nullable|date|before_or_equal:dateFin',
+            'dateArrive' => 'nullable|date|after_or_equal:dateDebut',
+            'dateFin' => 'nullable|date|after_or_equal:dateDebut',
+            'destination' => 'nullable|string|max:255',
+            'objectif' => 'nullable|string|max:500',
+            'etatRemboursement' => 'nullable|boolean',
+        ]);
 
-    //     // $formFields = $request->validate([
-    //     //     'first_name' => 'required|string|min:5|max:255',
-    //     //     'last_name' => 'required|string|min:5|max:255',
-    //     //     'email' => 'required|email|max:255|unique:employees,email',
-    //     //     'phone_number' => 'required',
-    //     //     'role' => 'required|in:admin,medecin,infirmier',
-    //     //     'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
-    //     // ]);
+        $ordre->update($formFields);
 
-    //     $formFields = $request->validated();
-
-    //     $formFields['password'] = Hash::make($formFields['password']);
-
-
-    //     Employee::create($formFields);
-
-    //     return to_route('employees.index')->with('success', 'Employee created successfully!');
-    // }
+        return to_route('admin.accueil');
+    }
 }

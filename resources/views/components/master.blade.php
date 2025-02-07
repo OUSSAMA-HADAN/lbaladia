@@ -29,6 +29,9 @@
     </header>
 
     <div class="main-layout">
+        <div class="flashbag">
+                    @include('partials.flashbag')
+                </div>
         <aside style="position: fixed;" class="side_bar">
             @include('partials.sidebar')
         </aside>

@@ -58,17 +58,13 @@
                                 </td>
                             </form>
 
-                            {{-- <form action="">
-                                <td style="background-color: #ffc271;"><a
-                                        href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-danger"> --}}
-                                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 5h4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5v-7zM4.118 4a1 1 0 0 1 .876-.5h6.012a1 1 0 0 1 .876.5H13.5a.5.5 0 0 1 0 1h-11a.5.5 0 0 1 0-1h1.618zM4.5 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5V4h-7V3z"/>
-                                </svg> --}}
-                                {{-- <i class="bi bi-trash me-1"></i>
-                                
-                            </a>
+                            <form action="{{ route('ordres.destroy' , $order->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <td style="background-color: #ffc271;">
+                                <button class="btn btn-danger"><i class="bi bi-trash me-1"></i></button>
                                 </td>
-                            </form> --}}
+                            </form>
 
                             {{-- <aclass=""></aclass=> --}}
                         </tr>

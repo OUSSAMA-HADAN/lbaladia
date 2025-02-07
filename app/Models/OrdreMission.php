@@ -13,8 +13,9 @@ class OrdreMission extends Model
 
     protected $fillable = [
         'dateDebut',
-        'dateArriver',
+        'dateArrive',
         'dateFin',
+        'transport',
         'destination',
         'objectif',
         'idUtilisateur',
