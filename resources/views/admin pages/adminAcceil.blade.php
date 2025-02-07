@@ -26,7 +26,7 @@
                         </button>
                     </div>
                     <div class="col-md-4 text-end">
-                        <a class="btn btn-success" href="{{ route('admin.ordre') }}">Nouveau Ordre de Mission</a>
+                        <a class="btn btn-success" href="{{ route('ordres.create') }}">Nouveau Ordre de Mission</a>
                     </div>
                 </div>
             </div>
@@ -52,24 +52,23 @@
                             <td style="background-color: #ffc271;">{{ $order->etatRemboursement }}</td>
                             <td style="background-color: #ffc271;">de:{{ $order->dateDebut }} <br> a:{{ $order->dateFin }}
                             </td>
-                            <form action="{{ route('admin.rapportEdit' , $order->id) }}" method="get">
+                            <form action="{{ route('ordres.edit' , $order->id) }}" method="get">
                                 @csrf
-                                <td style="background-color: #ffc271;"><a
-                                    href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-success">Edit</a>
+                                <td style="background-color: #ffc271;"><button class="btn btn-success">Edit</button>
                                 </td>
                             </form>
 
-                            <form action="">
+                            {{-- <form action="">
                                 <td style="background-color: #ffc271;"><a
-                                        href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-danger">
+                                        href="{{ route('admin.rapportEdit', $order->id) }}" class="btn btn-danger"> --}}
                                 {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 5h4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5v-7zM4.118 4a1 1 0 0 1 .876-.5h6.012a1 1 0 0 1 .876.5H13.5a.5.5 0 0 1 0 1h-11a.5.5 0 0 1 0-1h1.618zM4.5 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5V4h-7V3z"/>
                                 </svg> --}}
-                                <i class="bi bi-trash me-1"></i>
+                                {{-- <i class="bi bi-trash me-1"></i>
                                 
                             </a>
                                 </td>
-                            </form>
+                            </form> --}}
 
                             {{-- <aclass=""></aclass=> --}}
                         </tr>

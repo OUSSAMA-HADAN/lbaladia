@@ -23,7 +23,7 @@
             <h1>أمر بمهمة</h1>
         </div>
         <div class="content">
-            <form action="" method="POST" class="text-right">
+            <form action="{{ route('ordres.store') }}" method="POST" class="text-right">
                 @csrf
                 <table class="">
                     <thead>

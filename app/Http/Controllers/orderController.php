@@ -8,24 +8,28 @@ use Illuminate\Http\Request;
 
 class orderController extends Controller
 {
-    public function accueil(){
+    public function index(){
         $orders = OrdreMission::all();
 
-        return view('admin pages\ajouterOrdre' , compact('orders'));
+        return view('admin pages.adminAcceil' , compact('orders'));
     }
 
 
     public function create()
     {
-        return view('ordreMession.create');
+        return view('admin pages.ordre.ajouterOrdre');
     }
 
-    public function store(OrderMessionRequest ){
-        
+    public function store(Request $request){
+        $formFields = $request->validated();
+
+        OrdreMission::create($formFields);
+
+        return to_route('admin pages\adminAcceil');
     }
 
 
-    public function ordreEdit($id)
+    public function edit($id)
     {
         $order = OrdreMission::findOrFail($id);
         return view('admin pages.ordre.ordreEdit' , compact('order'));
