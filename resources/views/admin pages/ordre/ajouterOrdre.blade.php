@@ -7,39 +7,7 @@
     <title>Printable A4 Template</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-        }
 
-        .container {
-            width: 210mm;
-            height: 297mm;
-            padding: 20mm;
-            border: 1px solid #000;
-            box-sizing: border-box;
-        }
-
-        .header,
-        .footer {
-            text-align: center;
-        }
-
-        .content {
-            margin-top: 20mm;
-        }
-
-        @media print {
-
-            .btn,
-            .mt-3 {
-                display: none !important;
-            }
-        }
-    </style>
 </head>
 
 <body>

@@ -14,10 +14,10 @@ class orderController extends Controller
         return view('admin pages\ajouterOrdre' , compact('orders'));
     }
 
-    public function rapportEdit($id)
+    public function ordreEdit($id)
     {
         $order = OrdreMission::findOrFail($id);
-        return view('admin pages.rapportEdit' , compact('order'));
+        return view('admin pages.ordre.ordreEdit' , compact('order'));
     }
 
 
