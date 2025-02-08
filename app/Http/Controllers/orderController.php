@@ -14,6 +14,17 @@ class orderController extends Controller
         return view('admin pages\ajouterOrdre' , compact('orders'));
     }
 
+
+    public function create()
+    {
+        return view('ordreMession.create');
+    }
+
+    public function store(OrderMessionRequest ){
+        
+    }
+
+
     public function ordreEdit($id)
     {
         $order = OrdreMission::findOrFail($id);
