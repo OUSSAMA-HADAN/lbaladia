@@ -23,7 +23,9 @@ class OrderController extends Controller
 
     public function store(OrderMissionRequest $request)
     {
-        OrdreMission::create($request->validated());
+        $formFields = $request->validated();
+
+        OrdreMission::create($formFields);
         return to_route('admin.accueil');
     }
 
@@ -37,16 +39,7 @@ class OrderController extends Controller
     {
         $ordre = OrdreMission::findOrFail($id);
 
-        $formFields = $request->validate([
-            'dateDebut' => 'nullable|date|before_or_equal:dateFin',
-            'dateArrive' => 'nullable|date|after_or_equal:dateDebut',
-            'dateFin' => 'nullable|date|after_or_equal:dateDebut',
-            'transport' => 'nullable|string|max:255',
-            'destination' => 'nullable|string|max:255',
-            'objectif' => 'nullable|string|max:500',
-            'etatRemboursement' => 'nullable|boolean',
-            'file_path' => 'required|file|mimes:pdf,doc,docx|max:2048',
-        ]);
+        $formFields = $request->validated();
 
         $ordre->update($formFields);
 

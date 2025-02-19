@@ -25,9 +25,9 @@ class OrderMissionRequest extends FormRequest
             'dateFin' => 'required|date|after_or_equal:dateDebut',
             'destination' => 'required|string|max:255',
             'objectif' => 'required|string|max:500',
-            'idUtilisateur' => 'required|exists:users,id',
-            'etatRemboursement' => 'nullable|boolean',
-            'file_path' => 'required|file|mimes:pdf,doc,docx|max:2048'
+            'idUtilisateur' => 'required|exists:utilisateur,id',
+            'etatRemboursement' => 'nullable|default:Approved',
+            'file_path' => 'max:2048'
 
         ];
     }
