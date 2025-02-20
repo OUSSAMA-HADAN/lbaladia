@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderMissionRequest;
 use App\Models\OrdreMission;
+use App\Models\Utilisateur;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -16,7 +17,8 @@ class OrderController extends Controller
 
     public function create()
     {
-        return view('admin pages.ordre.ajouterOrdre');
+        $utilisateurs = Utilisateur::all();
+        return view('admin pages.ordre.ajouterOrdre', compact('utilisateurs'));
     }
 
     public function store(OrderMissionRequest $request)
@@ -43,6 +45,7 @@ class OrderController extends Controller
             'destination' => 'nullable|string|max:255',
             'objectif' => 'nullable|string|max:500',
             'etatRemboursement' => 'nullable|boolean',
+            'file_path' => 'required|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
         $ordre->update($formFields);

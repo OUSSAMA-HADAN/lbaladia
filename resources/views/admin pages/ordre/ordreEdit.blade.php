@@ -21,7 +21,7 @@
     </x-alert>
     @endif
 
-    <form action="{{ route('ordres.update' , $order->id) }}" method="POST" class="text-right">
+    <form action="{{ route('ordres.update' , $order->id) }}" method="POST" class="text-right" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -78,6 +78,10 @@
                     <div class="mb-3">
                         <label for="objectif" class="form-label">Sujet</label>
                         <textarea class="form-control" id="objectif" rows="3" name="objectif" required>{{ old('objectif' , $order->objectif) }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="file" class="form-label">attache l'ordre de mission</label>
+                        <input type="file" class="form-control" id="file_path" name="file_path" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Envoyer</button>

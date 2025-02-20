@@ -27,6 +27,8 @@ class OrderMissionRequest extends FormRequest
             'objectif' => 'required|string|max:500',
             'idUtilisateur' => 'required|exists:users,id',
             'etatRemboursement' => 'nullable|boolean',
+            'file_path' => 'required|file|mimes:pdf,doc,docx|max:2048'
+
         ];
     }
 
@@ -47,6 +49,7 @@ class OrderMissionRequest extends FormRequest
             'objectif.required' => 'L\'objectif est obligatoire.',
             'idUtilisateur.required' => 'L’utilisateur est requis.',
             'idUtilisateur.exists' => 'L’utilisateur sélectionné est invalide.',
+            'file_path.required' => 'Le fichier est obligatoire.'
         ];
     }
 }

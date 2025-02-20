@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Printable A4 Template</title>
+    <title>Ajout d'ordre</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
    
@@ -14,7 +14,7 @@
     <div class="container">
         
         <div class="content">
-            <form action="{{ route('ordres.store') }}" method="POST" class="text-right">
+            <form action="{{ route('ordres.store') }}" method="POST" class="text-right" enctype="multipart/form-data">
                 @csrf
                 <div class="container mt-5">
                     <div class="card shadow-lg">
@@ -24,14 +24,16 @@
                         <div class="card-body">
                             <form>
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="nom" class="form-label">Nom</label>
-                                        <input type="text" class="form-control" id="nom" name='' required>
+                                    <div class="col-md-12">
+                                        <label for="utilisateur" class="form-label">Utilisateur</label>
+                                        <select class="form-select" id="idUtilisateur" name='idUtilisateur' required>
+                                            <option value="">Choisissez un utilisateur</option>
+                                            @foreach($utilisateurs as $utilisateur)
+                                                <option value="{{ $utilisateur->id }}">{{ $utilisateur->nom }} {{ $utilisateur->prenom }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="prenom" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" id="prenom" name='' required>
-                                    </div>
+                                    
                                 </div>
             
                                 <div class="row mb-3">
@@ -69,6 +71,10 @@
                                 <div class="mb-3">
                                     <label for="objectif" class="form-label">Sujet</label>
                                     <textarea class="form-control" id="sujet" rows="3" name='' required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="file" class="form-label">attache l'ordre de mission</label>
+                                    <input type="file" class="form-control" id="file_path" name="file_path" required>
                                 </div>
             
                                 <button type="submit" class="btn btn-primary">Envoyer</button>

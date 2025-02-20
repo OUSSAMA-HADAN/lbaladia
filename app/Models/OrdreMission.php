@@ -20,6 +20,7 @@ class OrdreMission extends Model
         'objectif',
         'idUtilisateur',
         'etatRemboursement',
+        'file_path',
     ];
 
 
