@@ -1,39 +1,127 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <style>
-    .sidebar1{
-        width: 250px;
+    :root {
+        --primary-color: #e48e1e;
+        --primary-hover: #d37d0d;
+        --background-color: #f5f5f5;
+        --text-color: #333;
+        --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        --transition: all 0.3s ease;
     }
-    .button1{
-        width: 110%;
+    
+    .sidebar-container {
+        background-color: var(--background-color);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        border: none;
+        height: 100vh;
+        position: fixed;
+        width: 280px;
+        padding: 20px 15px;
     }
-    .button1>a{
+    
+    .sidebar-logo {
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .menu-item {
+        background-color: var(--primary-color);
+        color: white;
         border-radius: 10px;
+        padding: 14px 20px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: var(--transition);
+        border: none;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
-    .button2{
-        width: 110%;
+    
+    .menu-item:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .menu-item i {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    
+    .logout-btn {
+        background-color: #dc3545;
+        color: white;
+        border-radius: 10px;
+        padding: 14px 20px;
+        font-weight: 500;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+    
+    .logout-btn:hover {
+        background-color: #c82333;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .main-content {
+        margin-left: 300px;
+        padding: 20px;
     }
 </style>
+
 <body>
 <div class="d-flex">
-    <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 p-0 bg-dark text-light w-100" style="background-color: #d9d9d9 !important; border: 1px solid black">
-            <div class="d-flex flex-column vh-100 ms-2 sidebar1"><br><br><hr>
-                <div class="list-group flex-grow-1 mt-auto p-3 button1 text-center"><br>
-                    <a href="{{route('admin.accueil')}}" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Accueil</a><br>
-                    <a href="{{route('admin.rapports')}}" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Raports</a><br>
-                    {{-- <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Statistics</a><br> --}}
-                    <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Archive</a><br>
-                    <a href="#" class="list-group-item list-group-item-action" style="background-color: #e48e1e !important;">Gestion Foncionnaire</a><br>
-                </div>
-                <div class="mt-auto p-3">
-                    <a class="btn btn-danger button2" href="{{ route('login.logout') }}">Logout</a>
-                </div>
-            </div>
+    <!-- Improved Sidebar -->
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <h3>Admin Panel</h3>
+            <p class="text-muted">Welcome back, Admin</p>
         </div>
+        
+        <div class="sidebar-menu">
+            <a href="{{route('admin.accueil')}}" class="menu-item">
+                <i class="fa fa-home"></i> Accueil
+            </a>
+            <a href="{{route('admin.rapports')}}" class="menu-item">
+                <i class="fa fa-chart-bar"></i> Rapports
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fa fa-archive"></i> Archive
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fa fa-users"></i> Gestion Fonctionnaire
+            </a>
+        </div>
+        
+        <a class="logout-btn" href="{{ route('login.logout') }}">
+            <i class="fa fa-sign-out-alt"></i> Déconnexion
+        </a>
+    </div>
 
-        <div class="col-md-9 ms-auto">
-        </div>
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Your page content goes here -->
     </div>
 </div>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>

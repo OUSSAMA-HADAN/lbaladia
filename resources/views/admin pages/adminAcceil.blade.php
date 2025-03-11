@@ -10,6 +10,43 @@
             <title>ADMIN</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
             @vite(['resources/css/app.css', 'resources/js/app.js'])
+            <style>
+                /* Status badge styling */
+                .status-badge {
+                    display: inline-block;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 9999px;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                }
+
+                .status-pending {
+                    background-color: #fef3c7;
+                    color: #92400e;
+                }
+
+                .status-complete {
+                    background-color: #dcfce7;
+                    color: #166534;
+                }
+
+                .date-range {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 0.875rem;
+                }
+
+                .date-label {
+                    font-weight: 500;
+                    color: #374151;
+                }
+
+                .action-btn {
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.25rem;
+                    margin-right: 0.25rem;
+                }
+            </style>
         </head>
 
         <body>
@@ -32,44 +69,66 @@
             </div>
             </div>
             <x-tableCard :orders="$orders">
-                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                <thead style="position: sticky; top: 0; z-index: 1;">
                     <tr class="text-center">
-                        <th class="col-3">Nom foncionnaire</th>
-                        <th class="col-2">destination</th>
-                        <th class="col-3">Sujet</th>
-                        <th>etat de rembourcement</th>
-                        <th class="col-2">Date</th>
+                        <th class="col-3">Staff Name</th>
+                        <th class="col-2">Destination <i class="bi bi-geo-alt me-1 text-muted"></i></th>
+                        <th class="col-3">Subject</th>
+                        <th>Reimbursement Status</th>
+                        <th class="col-2">Date Period</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach ($orders as $order)
                         <tr class="text-center">
-                            <td style="background-color: #ffc271;">{{ $order->utilisateur->prenom }}
-                                {{ $order->utilisateur->nom }}</td>
-                            <td style="background-color: #ffc271;">{{ $order->destination }}</td>
-                            <td style="background-color: #ffc271; font-size: small;">{{ $order->objectif }}</td>
-                            <td style="background-color: #ffc271;">{{ $order->etatRemboursement }}</td>
-                            <td style="background-color: #ffc271;">de:{{ $order->dateDebut }} <br> a:{{ $order->dateFin }}
+                            <td>
+                                <div class="fw-semibold">{{ $order->utilisateur->prenom }} {{ $order->utilisateur->nom }}
+                                </div>
                             </td>
-                            <form action="{{ route('ordres.edit' , $order->id) }}" method="get">
+                            <td>
+
+                                {{ $order->destination }}
+                            </td>
+                            <td class="text-start" style="font-size: 0.9rem;">
+                                <div style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
+                                    {{ $order->objectif }}
+                                </div>
+                            </td>
+                            <td>
+                                <span
+                                    class="status-badge {{ $order->etatRemboursement == 'Completed' ? 'status-complete' : 'status-pending' }}">
+                                    {{ $order->etatRemboursement }}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="date-range">
+                                    <span><span class="date-label">From:</span> {{ $order->dateDebut }}</span>
+                                    <span><span class="date-label">To:</span> {{ $order->dateFin }}</span>
+                                </div>
+                            </td>
+                            <form action="{{ route('ordres.edit', $order->id) }}" method="get">
                                 @csrf
-                                <td style="background-color: #ffc271;"><button class="btn btn-success">Edit</button>
+                                <td>
+                                    <button class="btn btn-sm btn-primary action-btn" title="Edit">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
                                 </td>
                             </form>
-
-                            <form action="{{ route('ordres.destroy' , $order->id) }}" method="post">
+                            <form action="{{ route('ordres.destroy', $order->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <td style="background-color: #ffc271;">
-                                <button class="btn btn-danger"><i class="bi bi-trash me-1"></i></button>
+                                <td>
+                                    <button class="btn btn-sm btn-danger action-btn" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
                                 </td>
                             </form>
-
-                            {{-- <aclass=""></aclass=> --}}
                         </tr>
                     @endforeach
                 </tbody>
+
+
             </x-tableCard>
 
         </body>
