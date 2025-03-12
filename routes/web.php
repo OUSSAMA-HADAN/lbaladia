@@ -12,12 +12,14 @@ Route::post("/login", [LoginCOntroller::class, 'login'])->name('login.store');
 Route::get("/login/logout", [LoginCOntroller::class, 'logout'])->name('login.logout');
 
 // Route::get("/Admin/ordreEdit/{id}",[orderController::class,'update'])->name('admin.ordreEdit');
-Route::get("/Admin/rapport",[AcceilController::class,'rapport'])->name('admin.rapports');
 // Route::get("/FCT/acceil",[fctController::class,'accueil']);
 // Route::get("/admin/ajouter_ordre",[orderController::class,'accueil'])->name('admin.ordre');
 
 
 // Route::delete("/Admin/ordreEdit/{id}", [orderController::class, 'delete'])->name('admin.ordreEdit');
+
+Route::get("/Admin/rapport",[AcceilController::class,'rapport'])->name('admin.rapports');
+
 
 
 Route::get("/Admin/accueil", [orderController::class, 'index'])->name('admin.accueil');

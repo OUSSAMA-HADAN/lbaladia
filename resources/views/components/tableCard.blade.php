@@ -1,4 +1,4 @@
-<div class="mt-5 card" style=" ">
+<div class="mt-5 card" >
     <table class="table table-bordered border-dark">
         {{ $slot }}
     

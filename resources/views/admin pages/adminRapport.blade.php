@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <x-table/>
+    <x-tableCard/>
 
 
 </body>
